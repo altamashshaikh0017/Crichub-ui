@@ -1,0 +1,440 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  padding-block: clamp(44px, 6vw, 84px) clamp(48px, 6vw, 88px);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: clamp(40px, 5vw, 76px);
+}
+
+.hero__kicker {
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.hero__title {
+  margin-top: 20px;
+  font-size: clamp(2.6rem, 5.6vw, 4.3rem);
+  line-height: 1.03;
+  letter-spacing: -0.022em;
+}
+
+.hero__lede {
+  margin-top: 26px;
+  max-width: 48ch;
+  font-size: 1.06rem;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.hero__note {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+/* The photograph sits slightly proud of the grid, with the ball overlapping
+   its lower-left corner — a print trick, and it stops the layout reading
+   as two tidy rectangles. */
+.hero__art {
+  position: relative;
+}
+
+.hero__photo .figure__img {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--rule);
+}
+
+/* Anchored to .figure__frame, so it always straddles the picture's lower-left
+   corner and never rides up over the caption. */
+.hero__ball {
+  position: absolute;
+  left: -34px;
+  bottom: 24px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--paper);
+  transform: rotate(-8deg);
+}
+
+/* ==========================================================================
+   Spec strip
+   ========================================================================== */
+
+.strip {
+  border-block: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+
+.strip__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-block: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ==========================================================================
+   Editorial rows
+   ========================================================================== */
+
+.rows {
+  margin-top: 64px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  padding-block: clamp(40px, 4.5vw, 62px);
+  border-top: 1px solid var(--rule);
+}
+
+.row--reverse .row__figure {
+  order: 2;
+}
+
+.row__figure .figure__img {
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--rule);
+}
+
+.row__title {
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+}
+
+.row__text p {
+  margin-top: 16px;
+  max-width: 46ch;
+}
+
+/* Two short points, set as a ruled two-column footnote to the section. */
+.shorts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  padding-top: 44px;
+  border-top: 1px solid var(--rule);
+}
+
+.short__title {
+  font-size: 1.2rem;
+}
+
+.short p {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Steps
+   ========================================================================== */
+
+.steps-section {
+  border-top: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+
+.steps-section__inner {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  align-items: start;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.steps {
+  margin: 44px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 8px 20px;
+  padding-block: 26px;
+  border-top: 1px solid var(--rule);
+}
+
+.step:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.step__n {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--red);
+  padding-top: 4px;
+}
+
+.step__title {
+  font-size: 1.32rem;
+}
+
+.step p {
+  margin-top: 8px;
+  max-width: 52ch;
+  font-size: 0.96rem;
+}
+
+.steps__figure {
+  position: sticky;
+  top: calc(var(--nav-height) + 32px);
+}
+
+.steps__figure .figure__img {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--rule);
+}
+
+/* ==========================================================================
+   Formats — a scorecard table
+   ========================================================================== */
+
+.spec {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: start;
+  gap: clamp(36px, 4.5vw, 64px);
+}
+
+.spec__figure {
+  margin-top: 40px;
+}
+
+.spec__figure .figure__img {
+  aspect-ratio: 10 / 7;
+  border: 1px solid var(--rule);
+}
+
+.spec__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.spec__table tr {
+  border-top: 1px solid var(--rule);
+}
+
+.spec__table tr:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.spec__table tr:hover {
+  background: var(--paper-2);
+}
+
+.spec__table th,
+.spec__table td {
+  padding: 20px 16px 20px 0;
+  vertical-align: baseline;
+}
+
+.spec__table th {
+  width: 27%;
+  font-family: var(--font-sans);
+  font-size: 0.71rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.spec__value {
+  width: 45%;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.spec__note {
+  width: 28%;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.93rem;
+  line-height: 1.4;
+  color: var(--ink-3);
+  text-align: right;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   Closing
+   ========================================================================== */
+
+.closing {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(84px, 11vw, 148px);
+  overflow: hidden;
+}
+
+.closing__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(10, 16, 13, 0.82), rgba(10, 16, 13, 0.68));
+}
+
+.closing__inner {
+  text-align: center;
+  color: #fff;
+}
+
+.closing__title {
+  color: #fff;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  max-width: none;
+}
+
+.closing__lede {
+  margin: 18px auto 0;
+  max-width: 50ch;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.closing__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.closing__credit {
+  margin-top: 48px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.closing__credit a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 940px) {
+  .hero__inner,
+  .row,
+  .row--reverse,
+  .steps-section__inner,
+  .spec {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__art {
+    order: -1;
+  }
+
+  .row--reverse .row__figure {
+    order: 0;
+  }
+
+  .steps__figure {
+    position: static;
+  }
+
+  .steps__figure .figure__img {
+    aspect-ratio: 3 / 2;
+  }
+
+  .spec__note {
+    text-align: left;
+  }
+
+  .spec__figure {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 620px) {
+  .shorts {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero__ball {
+    left: -10px;
+    bottom: 16px;
+    width: 74px;
+    height: 74px;
+    border-width: 4px;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .spec__table th {
+    width: auto;
+  }
+
+  .spec__table th,
+  .spec__table td {
+    display: block;
+    padding: 0 0 6px;
+  }
+
+  .spec__table tr {
+    padding-block: 18px;
+  }
+
+  .spec__table td:last-child {
+    padding-bottom: 18px;
+  }
+
+  .hero__cta .btn,
+  .closing__cta .btn {
+    flex: 1 1 100%;
+  }
+}
