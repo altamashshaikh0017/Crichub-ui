@@ -1,7 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Dashboard from './pages/Dashboard'
 import Placeholder from './pages/Placeholder'
 
 export default function App() {
@@ -12,10 +16,17 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* Stubs — the auth screens are not built yet, but src/api/auth.js
-            already speaks to /api/auth/login and /api/auth/signup. */}
-        <Route path="/login" element={<Placeholder title="Log in" />} />
-        <Route path="/signup" element={<Placeholder title="Create your account" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="*"

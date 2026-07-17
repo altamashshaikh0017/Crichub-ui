@@ -1,0 +1,264 @@
+/* ==========================================================================
+   Auth screens — log in & sign up.
+   A split spread: a form on paper, a credited photograph alongside it,
+   in keeping with the almanack styling used across the site.
+   ========================================================================== */
+
+.auth {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+@media (min-width: 900px) {
+  .auth--split {
+    grid-template-columns: 1fr 0.85fr;
+  }
+}
+
+/* ── Form column ─────────────────────────────────────────────────────────── */
+.auth__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 88px) 28px;
+}
+
+.auth__form {
+  width: 100%;
+  max-width: 460px;
+}
+
+.auth--wide .auth__form {
+  max-width: 560px;
+}
+
+.auth__title {
+  margin-top: 8px;
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+}
+
+.auth__lede {
+  margin-top: 14px;
+  max-width: 46ch;
+  color: var(--ink-2);
+}
+
+.auth__lede a,
+.auth__alt a {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.auth__lede a:hover,
+.auth__alt a:hover {
+  text-decoration: underline;
+}
+
+/* ── Fields ──────────────────────────────────────────────────────────────── */
+.auth__fields {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Two controls side by side (first/last name, styles). */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 560px) {
+  .field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.field__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.field__optional {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ink-3);
+}
+
+.field__control-wrap {
+  position: relative;
+}
+
+.field__control {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--rule-strong);
+  border-radius: 0;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.field__control::placeholder {
+  color: var(--ink-3);
+}
+
+.field__control:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: inset 0 -2px 0 0 var(--red);
+}
+
+/* Reserve room for an in-field affix (e.g. the password Show/Hide button)
+   so typed text never slides underneath it. */
+.field__control--affix {
+  padding-right: 68px;
+}
+
+.field__control--select {
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%236f7674' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+.field--invalid .field__control {
+  border-color: var(--red);
+}
+
+.field__hint {
+  margin-top: 7px;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.field__error {
+  margin-top: 7px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--red-deep);
+}
+
+/* Password show/hide, sitting inside the control. */
+.field__reveal {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.field__reveal:hover {
+  color: var(--red);
+}
+
+/* ── Form furniture ──────────────────────────────────────────────────────── */
+.auth__error {
+  margin-top: 24px;
+  padding: 13px 16px;
+  font-size: 0.9rem;
+  color: var(--red-deep);
+  background: rgba(165, 50, 42, 0.07);
+  border-left: 3px solid var(--red);
+}
+
+.auth__notice {
+  margin-top: 24px;
+  padding: 13px 16px;
+  font-size: 0.9rem;
+  color: var(--green);
+  background: rgba(29, 59, 45, 0.08);
+  border-left: 3px solid var(--green);
+}
+
+.auth__submit {
+  width: 100%;
+  margin-top: 28px;
+}
+
+.auth__submit[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.auth__alt {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+/* ── Photograph column ───────────────────────────────────────────────────── */
+.auth__aside {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  background: var(--green);
+}
+
+@media (min-width: 900px) {
+  .auth__aside {
+    display: block;
+  }
+}
+
+.auth__aside-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.auth__aside-quote {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 40px clamp(28px, 3vw, 48px);
+  background: linear-gradient(to top, rgba(23, 25, 26, 0.82), rgba(23, 25, 26, 0));
+  color: #fff;
+}
+
+.auth__aside-quote p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.auth__aside-quote span {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}

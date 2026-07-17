@@ -72,6 +72,18 @@
   margin-left: 6px;
 }
 
+/* Signed-in identity — email, truncated so a long address can't push the
+   Log out button off the bar. */
+.nav__user {
+  max-width: 22ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--ink-3);
+}
+
 /* Mobile ------------------------------------------------------------------- */
 
 .nav__toggle {
