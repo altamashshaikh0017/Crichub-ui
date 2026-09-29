@@ -17,3 +17,8 @@ export function getMyProfile(options) {
 export function updateMyProfile(payload) {
   return api.put('/api/players/me', payload)
 }
+
+/** GET /api/players/:id/stats — a player's aggregated career stats. */
+export function getPlayerStats(playerId, options) {
+  return api.get(`/api/players/${playerId}/stats`, options)
+}

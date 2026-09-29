@@ -12,6 +12,8 @@ import Squad from './pages/Squad'
 import Tournaments from './pages/Tournaments'
 import TournamentTeams from './pages/TournamentTeams'
 import TournamentStandings from './pages/TournamentStandings'
+import TournamentLeaderboard from './pages/TournamentLeaderboard'
+import PlayerStats from './pages/PlayerStats'
 import Matches from './pages/Matches'
 import MatchResult from './pages/MatchResult'
 import MatchScorecard from './pages/MatchScorecard'
@@ -87,6 +89,24 @@ export default function App() {
           element={
             <ProtectedRoute>
               <TournamentStandings />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/tournaments/:tournamentId/leaderboard"
+          element={
+            <ProtectedRoute>
+              <TournamentLeaderboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/players/:playerId/stats"
+          element={
+            <ProtectedRoute>
+              <PlayerStats />
             </ProtectedRoute>
           }
         />

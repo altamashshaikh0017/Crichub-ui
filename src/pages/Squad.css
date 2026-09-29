@@ -88,6 +88,14 @@
   color: var(--ink);
 }
 
+.roster__name-link {
+  color: var(--ink);
+}
+
+.roster__name-link:hover {
+  color: var(--red);
+}
+
 .roster__tag {
   padding: 2px 8px;
   font-family: var(--font-sans);

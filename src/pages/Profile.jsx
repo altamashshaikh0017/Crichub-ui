@@ -120,6 +120,12 @@ function ProfileCard({ profile, onEdit }) {
           ))}
         </tbody>
       </table>
+
+      {profile.playerId != null && (
+        <p className="profile__stats-link">
+          <Link to={`/players/${profile.playerId}/stats`}>View my career stats →</Link>
+        </p>
+      )}
     </>
   )
 }

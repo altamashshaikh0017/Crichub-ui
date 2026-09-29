@@ -142,7 +142,9 @@ function PlayerRow({ teamId, player, onRemoved }) {
 
       <div className="roster__who">
         <span className="roster__name">
-          {player.playerName}
+          <Link to={`/players/${player.playerId}/stats`} className="roster__name-link">
+            {player.playerName}
+          </Link>
           {player.guest && <span className="roster__tag">Guest</span>}
         </span>
         <span className="roster__role">{roleLabel(player.playingRole)}</span>

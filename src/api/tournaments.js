@@ -44,3 +44,8 @@ export function unregisterTeam(tournamentId, registrationId) {
 export function getStandings(tournamentId, options) {
   return api.get(`/api/tournaments/${tournamentId}/standings`, options)
 }
+
+/** GET /api/tournaments/:id/leaderboard — top run-scorers and wicket-takers. */
+export function getLeaderboard(tournamentId, options) {
+  return api.get(`/api/tournaments/${tournamentId}/leaderboard`, options)
+}

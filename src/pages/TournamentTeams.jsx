@@ -73,6 +73,7 @@ export default function TournamentTeams() {
                     Teams
                   </span>
                   <Link to={`/tournaments/${tournamentId}/standings`}>Table</Link>
+                  <Link to={`/tournaments/${tournamentId}/leaderboard`}>Leaderboard</Link>
                 </nav>
               </div>
 

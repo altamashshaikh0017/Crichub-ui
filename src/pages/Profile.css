@@ -134,6 +134,20 @@
   cursor: progress;
 }
 
+.profile__stats-link {
+  margin-top: 24px;
+  font-size: 0.95rem;
+}
+
+.profile__stats-link a {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.profile__stats-link a:hover {
+  color: var(--red-deep);
+}
+
 .profile__back {
   margin-top: 40px;
   padding-top: 24px;

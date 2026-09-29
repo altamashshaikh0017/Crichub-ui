@@ -55,6 +55,7 @@ export default function TournamentStandings() {
                 <span className="standings__tab is-active" aria-current="page">
                   Table
                 </span>
+                <Link to={`/tournaments/${tournamentId}/leaderboard`}>Leaderboard</Link>
               </nav>
             </header>
 

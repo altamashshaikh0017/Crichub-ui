@@ -1,0 +1,186 @@
+.lb {
+  padding-block: clamp(40px, 5vw, 72px) clamp(64px, 9vw, 112px);
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.lb .container {
+  max-width: 900px;
+}
+
+.lb__loading {
+  margin-top: 40px;
+  color: var(--ink-2);
+}
+
+/* ── Header + tabs ───────────────────────────────────────────────────────── */
+.lb__head {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.lb__title {
+  margin-top: 8px;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+}
+
+.lb__lede {
+  margin-top: 10px;
+  color: var(--ink-2);
+}
+
+.lb__tabs {
+  display: flex;
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.lb__tabs a,
+.lb__tab {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  padding-bottom: 6px;
+}
+
+.lb__tabs a:hover {
+  color: var(--red);
+}
+
+.lb__tab.is-active {
+  color: var(--ink);
+  border-bottom: 2px solid var(--red);
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────────── */
+.lb__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+@media (min-width: 680px) {
+  .lb__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lb__card {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+}
+
+.lb__card-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.lb__empty {
+  margin-top: 16px;
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+
+.lb__list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.lb__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.lb__rank {
+  width: 24px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+.lb__who {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: auto;
+  min-width: 0;
+}
+
+.lb__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.lb__name:hover {
+  color: var(--red);
+}
+
+.lb__team {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.lb__metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.lb__metric strong {
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.lb__sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+
+/* First place gets the accent. */
+.lb__row:first-child .lb__rank,
+.lb__row:first-child .lb__metric strong {
+  color: var(--green);
+}
+
+/* ── Error state ─────────────────────────────────────────────────────────── */
+.lb__state {
+  padding: 24px 0 8px;
+}
+
+.lb__state p {
+  margin: 12px 0 22px;
+  color: var(--ink-2);
+}
+
+/* ── Back link ───────────────────────────────────────────────────────────── */
+.lb__back {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+}
+
+.lb__back a {
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.lb__back a:hover {
+  color: var(--red);
+}
