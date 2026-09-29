@@ -68,6 +68,12 @@ export default function TournamentTeams() {
                   {page.tournament.location} · {page.teams.length}/{page.tournament.maxTeams}{' '}
                   {page.teams.length === 1 ? 'team' : 'teams'} registered
                 </p>
+                <nav className="tteams__tabs" aria-label="Tournament views">
+                  <span className="tteams__tab is-active" aria-current="page">
+                    Teams
+                  </span>
+                  <Link to={`/tournaments/${tournamentId}/standings`}>Table</Link>
+                </nav>
               </div>
 
               {!registering && !full && (

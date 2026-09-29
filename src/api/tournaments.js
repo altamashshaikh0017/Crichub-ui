@@ -39,3 +39,8 @@ export function registerTeam(tournamentId, teamId) {
 export function unregisterTeam(tournamentId, registrationId) {
   return api.del(`/api/tournaments/${tournamentId}/teams/${registrationId}`)
 }
+
+/** GET /api/tournaments/:id/standings — the computed points table. */
+export function getStandings(tournamentId, options) {
+  return api.get(`/api/tournaments/${tournamentId}/standings`, options)
+}

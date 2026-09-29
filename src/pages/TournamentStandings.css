@@ -1,0 +1,159 @@
+.standings {
+  padding-block: clamp(40px, 5vw, 72px) clamp(64px, 9vw, 112px);
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.standings .container {
+  max-width: 820px;
+}
+
+.standings__loading {
+  margin-top: 40px;
+  color: var(--ink-2);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.standings__head {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.standings__title {
+  margin-top: 8px;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+}
+
+.standings__lede {
+  margin-top: 10px;
+  color: var(--ink-2);
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+.standings__tabs {
+  display: flex;
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.standings__tabs a,
+.standings__tab {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  padding-bottom: 6px;
+}
+
+.standings__tabs a:hover {
+  color: var(--red);
+}
+
+.standings__tab.is-active {
+  color: var(--ink);
+  border-bottom: 2px solid var(--red);
+}
+
+/* ── Table ───────────────────────────────────────────────────────────────── */
+.standings__table-wrap {
+  margin-top: 28px;
+  overflow-x: auto;
+}
+
+.standings__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 520px;
+}
+
+.standings__table thead th {
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-bottom: 2px solid var(--rule-strong);
+  white-space: nowrap;
+}
+
+.standings__table tbody td,
+.standings__table tbody th {
+  padding: 12px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.standings__rank {
+  width: 40px;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+}
+
+.standings__team-col {
+  text-align: left !important;
+  font-weight: 600 !important;
+}
+
+.standings__pts {
+  font-weight: 700 !important;
+  color: var(--ink);
+}
+
+.standings__nrr {
+  font-family: var(--font-mono);
+  color: var(--ink-2);
+}
+
+/* Emphasise the leader. */
+.standings__table tbody tr:first-child .standings__team-col,
+.standings__table tbody tr:first-child .standings__rank {
+  color: var(--green);
+}
+
+/* ── Empty + error states ────────────────────────────────────────────────── */
+.standings__empty {
+  margin-top: 36px;
+  padding: clamp(40px, 6vw, 64px) 28px;
+  text-align: center;
+  border: 1px dashed var(--rule-strong);
+  background: var(--paper-2);
+}
+
+.standings__empty h2 {
+  font-size: 1.4rem;
+}
+
+.standings__empty p {
+  margin: 12px auto 24px;
+  max-width: 44ch;
+  color: var(--ink-2);
+}
+
+.standings__state {
+  padding: 24px 0 8px;
+}
+
+.standings__state p {
+  margin: 12px 0 22px;
+  color: var(--ink-2);
+}
+
+/* ── Back link ───────────────────────────────────────────────────────────── */
+.standings__back {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+}
+
+.standings__back a {
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.standings__back a:hover {
+  color: var(--red);
+}

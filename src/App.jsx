@@ -11,8 +11,10 @@ import Teams from './pages/Teams'
 import Squad from './pages/Squad'
 import Tournaments from './pages/Tournaments'
 import TournamentTeams from './pages/TournamentTeams'
+import TournamentStandings from './pages/TournamentStandings'
 import Matches from './pages/Matches'
 import MatchResult from './pages/MatchResult'
+import MatchScorecard from './pages/MatchScorecard'
 import Placeholder from './pages/Placeholder'
 
 export default function App() {
@@ -81,6 +83,15 @@ export default function App() {
         />
 
         <Route
+          path="/tournaments/:tournamentId/standings"
+          element={
+            <ProtectedRoute>
+              <TournamentStandings />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
           path="/matches"
           element={
             <ProtectedRoute>
@@ -94,6 +105,15 @@ export default function App() {
           element={
             <ProtectedRoute>
               <MatchResult />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/matches/:matchId/scorecard"
+          element={
+            <ProtectedRoute>
+              <MatchScorecard />
             </ProtectedRoute>
           }
         />

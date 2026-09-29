@@ -34,3 +34,13 @@ export function recordResult(matchId, payload) {
 export function deleteMatch(matchId) {
   return api.del(`/api/matches/${matchId}`)
 }
+
+/** GET /api/matches/:id/scorecard — the per-player scorecard, grouped by team. */
+export function getScorecard(matchId, options) {
+  return api.get(`/api/matches/${matchId}/scorecard`, options)
+}
+
+/** PUT /api/matches/:id/scorecard — replace the whole scorecard. */
+export function saveScorecard(matchId, payload) {
+  return api.put(`/api/matches/${matchId}/scorecard`, payload)
+}

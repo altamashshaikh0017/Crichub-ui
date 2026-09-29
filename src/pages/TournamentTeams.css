@@ -32,6 +32,30 @@
   margin-top: 6px;
 }
 
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+.tteams__tabs {
+  display: flex;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.tteams__tabs a,
+.tteams__tab {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  padding-bottom: 6px;
+}
+
+.tteams__tabs a:hover {
+  color: var(--red);
+}
+
+.tteams__tab.is-active {
+  color: var(--ink);
+  border-bottom: 2px solid var(--red);
+}
+
 /* ── Notice ──────────────────────────────────────────────────────────────── */
 .tteams__notice {
   margin-top: 26px;

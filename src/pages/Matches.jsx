@@ -220,6 +220,9 @@ function MatchCard({ match, onEdit, onDeleted }) {
           <Link to={`/matches/${match.matchId}/result`} className="btn btn--primary btn--sm">
             {completed ? 'Edit result' : 'Record result'}
           </Link>
+          <Link to={`/matches/${match.matchId}/scorecard`} className="btn btn--outline btn--sm">
+            Scorecard
+          </Link>
           <button type="button" className="btn btn--outline btn--sm" onClick={onEdit}>
             Edit
           </button>

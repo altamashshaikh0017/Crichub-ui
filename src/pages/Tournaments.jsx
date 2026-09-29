@@ -208,6 +208,12 @@ function TournamentCard({ tournament, onEdit, onDeleted }) {
           >
             Teams
           </Link>
+          <Link
+            to={`/tournaments/${tournament.tournamentId}/standings`}
+            className="btn btn--outline btn--sm"
+          >
+            Table
+          </Link>
           <button type="button" className="btn btn--outline btn--sm" onClick={onEdit}>
             Edit
           </button>
