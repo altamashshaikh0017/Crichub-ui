@@ -113,6 +113,15 @@ button {
   padding-inline: 28px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* Buttons: squared, printed-label feel — no pills, no glow. */
 .btn {
   display: inline-flex;
@@ -158,9 +167,43 @@ button {
   border-color: #fff;
 }
 
+.btn--danger {
+  background: var(--red-deep);
+  color: var(--paper);
+}
+
+.btn--danger:hover {
+  background: #6a201b;
+}
+
 .btn--sm {
   padding: 9px 16px;
   font-size: 0.74rem;
+}
+
+/* Skeleton shimmer — shared by loading placeholders across pages. Size
+   modifiers (.sk--*) live with each page. */
+.sk {
+  display: block;
+  background: linear-gradient(90deg, var(--paper-2), var(--paper-3), var(--paper-2));
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.3s ease-in-out infinite;
+  border-radius: 3px;
+}
+
+@keyframes sk-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk {
+    animation: none;
+  }
 }
 
 /* Section kicker: rule + number + label, print-style. */

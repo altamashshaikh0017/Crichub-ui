@@ -16,12 +16,7 @@ export default function Navbar() {
 
   function handleLogout() {
     close()
-    signOut()
-    // Hard navigation to home. An SPA navigate() here races ProtectedRoute:
-    // clearing the user re-renders /dashboard, which redirects to /login before
-    // the route change lands. A full load leaves the protected tree outright and
-    // boots from cleared storage as a signed-out visitor.
-    window.location.assign('/')
+    signOut() // clears the session and hard-navigates home
   }
 
   return (

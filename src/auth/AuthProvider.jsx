@@ -19,6 +19,11 @@ export function AuthProvider({ children }) {
   const signOut = useCallback(() => {
     apiLogout()
     setUser(null)
+    // Hard navigation to home. An SPA route change here races ProtectedRoute:
+    // clearing the user re-renders the protected page, which redirects to
+    // /login before the route settles. A full load leaves the protected tree
+    // outright and boots from cleared storage as a signed-out visitor.
+    window.location.assign('/')
   }, [])
 
   const value = useMemo(() => ({ user, signIn, signOut }), [user, signIn, signOut])
